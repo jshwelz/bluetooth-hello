@@ -5,57 +5,55 @@
 
 #include <CurieBLE.h>
 
-
 //Pins for DO
-const int ledPinDo1 = 10; // set ledPin to on-board LED
-const int ledPinDo2 = 6; // set ledPin to on-board LED
-const int ledPinDo3 = 3; // set ledPin to on-board LED
+const int ledPinDo1 = 10; // 
+const int ledPinDo2 = 6; // 
+const int ledPinDo3 = 3; // 
 
 
 //Pins for REmenor
-const int ledPinRe1 = 4; // set ledPin to on-board LED
-const int ledPinRe2 = 7; // set ledPin to on-board LED
-const int ledPinRe3 = A0; // set ledPin to on-board LED
+const int ledPinRe1 = 4; // 
+const int ledPinRe2 = 7; // 
+const int ledPinRe3 = A0; // 
 
 
 //Pins for Mimenor
-const int ledPinMi1 = 5; // set ledPin to on-board LED
-const int ledPinMi2 = 6; // set ledPin to on-board LED
-
+const int ledPinMi1 = 5; // 
+const int ledPinMi2 = 6; // 
 
 
 //Pins for FA
-const int ledPinFa1 = 0; // set ledPin to on-board LED
-const int ledPinFa2 = 1; // set ledPin to on-board LED
-const int ledPinFa3 = 2; // set ledPin to on-board LED
-const int ledPinFa4 = 3; // set ledPin to on-board LED
-const int ledPinFa5 = 4; // set ledPin to on-board LED
-const int ledPinFa6 = 7; // set ledPin to on-board LED
-const int ledPinFa7 = 10; // set ledPin to on-board LED
-const int ledPinFa8 = 11; // set ledPin to on-board LED
+const int ledPinFa1 = 0; // 
+const int ledPinFa2 = 1; // 
+const int ledPinFa3 = 2; // 
+const int ledPinFa4 = 3; // 
+const int ledPinFa5 = 4; // 
+const int ledPinFa6 = 7; // 
+const int ledPinFa7 = 10; // 
+const int ledPinFa8 = 11; // 
 
 
 
 //Pins for SOL
-const int ledPinSol1 = 6; // set ledPin to on-board LED
-const int ledPinSol2 = A0; // set ledPin to on-board LED
-const int ledPinSol3 = A1; // set ledPin to on-board LED
+const int ledPinSol1 = 6; // 
+const int ledPinSol2 = A0; // 
+const int ledPinSol3 = A1; // 
 
 
 
 //Pins for LaMenor
-const int ledPinLa1 = 3; // set ledPin to on-board LED
-const int ledPinLa2 = 6; // set ledPin to on-board LED
-const int ledPinLa3 = 7; // set ledPin to on-board LED
+const int ledPinLa1 = 3; // 
+const int ledPinLa2 = 6; // 
+const int ledPinLa3 = 7; // 
 
 //Pins for SI7
-const int ledPinSi1 = 5; // set ledPin to on-board LED
-const int ledPinSi2 = 1; // set ledPin to on-board LED
-const int ledPinSi3 = 9; // set ledPin to on-board LED
-const int ledPinSi4 = 7; // set ledPin to on-board LED
+const int ledPinSi1 = 5; // 
+const int ledPinSi2 = 1; // 
+const int ledPinSi3 = 9; // 
+const int ledPinSi4 = 7; // 
 
 
-const int buttonPin = 4; // set buttonPin to digital pin 4
+const int buttonPin = 4; // 
 
 BLEPeripheral blePeripheral; // create peripheral instance
 BLEService ledService("19B10010-E8F2-537E-4F6C-D104768A1214"); // create service
@@ -68,18 +66,18 @@ BLECharCharacteristic buttonCharacteristic("19B10012-E8F2-537E-4F6C-D104768A1214
 
 void setup() {
   Serial.begin(9600);
-  pinMode(ledPinDo1, OUTPUT); // use the LED on pin 13 as an output
-  pinMode(ledPinDo2, OUTPUT); // use the LED on pin 13 as an output
-  pinMode(ledPinDo3, OUTPUT); // use the LED on pin 13 as an output
+  pinMode(ledPinDo1, OUTPUT); // 
+  pinMode(ledPinDo2, OUTPUT); // 
+  pinMode(ledPinDo3, OUTPUT); // 
 
-  pinMode(ledPinRe1, OUTPUT); // use the LED on pin 13 as an output
-  pinMode(ledPinRe2, OUTPUT); // use the LED on pin 13 as an output
-  pinMode(ledPinRe3, OUTPUT); // use the LED on pin 13 as an output
+  pinMode(ledPinRe1, OUTPUT); // 
+  pinMode(ledPinRe2, OUTPUT); // 
+  pinMode(ledPinRe3, OUTPUT); // 
 
 
 
-  pinMode(ledPinMi1, OUTPUT); // use the LED on pin 13 as an output
-  pinMode(ledPinMi2, OUTPUT); // use the LED on pin 13 as an output
+  pinMode(ledPinMi1, OUTPUT); // 
+  pinMode(ledPinMi2, OUTPUT); // 
   
 
 
@@ -134,12 +132,8 @@ void loop() {
   // poll peripheral
   blePeripheral.poll();
 
-  
-  
-  
+     
   if (ledCharacteristic.written() ) {
-
-
     switch (ledCharacteristic.value()) {
     case 1:
       //DO
@@ -204,15 +198,8 @@ void loop() {
       // default is optional
     break;
     }
-   
-
-
-    
-  }
-
-
-
-  
+      
+  }  
 }
 
 void turnOffLeds()
