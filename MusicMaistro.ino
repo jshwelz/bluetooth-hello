@@ -61,8 +61,6 @@ BLEService ledService("19B10010-E8F2-537E-4F6C-D104768A1214"); // create service
 
 // create switch characteristic and allow remote device to read and write
 BLECharCharacteristic ledCharacteristic("19B10011-E8F2-537E-4F6C-D104768A1214", BLERead | BLEWrite);
-// create button characteristic and allow remote device to get notifications
-BLECharCharacteristic buttonCharacteristic("19B10012-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); // allows remote device to get notifications
 
 void setup() {
   Serial.begin(9600);
@@ -74,13 +72,9 @@ void setup() {
   pinMode(ledPinRe2, OUTPUT); // 
   pinMode(ledPinRe3, OUTPUT); // 
 
-
-
   pinMode(ledPinMi1, OUTPUT); // 
   pinMode(ledPinMi2, OUTPUT); // 
   
-
-
   pinMode(ledPinFa1, OUTPUT); // use the LED on pin 13 as an output
   pinMode(ledPinFa2, OUTPUT); // use the LED on pin 13 as an output
   pinMode(ledPinFa3, OUTPUT); // use the LED on pin 13 as an output
@@ -90,7 +84,6 @@ void setup() {
   pinMode(ledPinFa7, OUTPUT); // use the LED on pin 13 as an output
   pinMode(ledPinFa8, OUTPUT); // use the LED on pin 13 as an output
   
-
 
   pinMode(ledPinSol1, OUTPUT); // use the LED on pin 13 as an output
   pinMode(ledPinSol2, OUTPUT); // use the LED on pin 13 as an output
@@ -117,10 +110,10 @@ void setup() {
   // add service and characteristics
   blePeripheral.addAttribute(ledService);
   blePeripheral.addAttribute(ledCharacteristic);
-  blePeripheral.addAttribute(buttonCharacteristic);
+  
 
   ledCharacteristic.setValue(0);
-  buttonCharacteristic.setValue(0);
+  
 
   // advertise the service
   blePeripheral.begin();
@@ -205,7 +198,6 @@ void loop() {
 void turnOffLeds()
 {
 
-
  analogWrite(ledPinRe3, 0); 
  analogWrite(ledPinSol3, 0); 
    
@@ -217,8 +209,7 @@ void turnOffLeds()
   for (int i=0;i<=5;i++)
   {
       analogWrite(i, 0);              
-  }
-      
+  }      
 }
 
 /*
